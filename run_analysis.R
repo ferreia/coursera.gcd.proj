@@ -6,10 +6,6 @@
 # 4- Appropriately labels the data set with descriptive variable names. 
 # 5- Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-# All files have been downloaded to this location, from now on, can just use file names without the full path
-cwd <- "/Users/ferreia/dev/GIT/coursera/DataScienceSpec/GettingData/project/UCI HAR Dataset"
-setwd(cwd)
-
 # 
 # Process features
 # 
@@ -84,8 +80,8 @@ loadAndProcessData <- function(subjects.fname, activities.fname, feature.data.fn
 }
 
 # Load Test data
-test.df <- loadAndProcessData("test/subject_test.txt", "test/Y_test.txt", "test/X_test.txt", selected.features)
-train.df <- loadAndProcessData("train/subject_train.txt", "train/y_train.txt", "train/X_train.txt", selected.features)
+test.df <- loadAndProcessData("subject_test.txt", "Y_test.txt", "X_test.txt", selected.features)
+train.df <- loadAndProcessData("subject_train.txt", "y_train.txt", "X_train.txt", selected.features)
 
 # Create a single data set from training and test data
 full.df <- rbind(train.df, test.df)
@@ -104,6 +100,5 @@ tidy <- agg[, c(3,2,1,4)]
 names(tidy) <- c(names(tidy)[1:3],"mean")
 
 # write tidy data to file
-fname <- "/Users/ferreia/dev/GIT/dataSciSpec.git/project/tidy.txt"
-write.table(tidy, file = fname, sep = ",")
+write.table(tidy, file = "tidy.txt", sep = ",")
 

@@ -9,8 +9,6 @@ Files in repository:
 
 ### run_analysis.R
 
-The script starts by setting the working directory to the location where the data has been downloaded and unzipped.
-
 It then loads the features data from a file and proceeds to remove all the entries that do not refer to a standard deviation or a mean. This is achieved by selecting only the columns that have '-std()' or '-mean()' as a substring. It also replaces all '-' with '.'.
 
 It creates a data frame called `selected.features` whose columns contain the index of the feature in the original feature name data, the original name and the updated name where '-' have been replaced with '.'. This data frame is later used to filter columns from the test and training data sets.
