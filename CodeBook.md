@@ -13,4 +13,4 @@ This file contains a table with the following columns:
 
 ### Data Transformations
 * The feature names in the column `variable` have been modified to make them more readable: '()' were removed and '-' were replaced with '.'
-* The activity values were converted to factors and instead of the numerical values, the descriptions were used instead in the column `activity`
+* The activity values were converted to factors and instead of the numerical values, textual descriptions were used in the column `activity`
