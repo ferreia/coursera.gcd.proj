@@ -8,8 +8,9 @@ Files in repository:
 2. tidy.txt - the output file with the result of the analysis
 
 ### run_analysis.R
+For simplicity, all the data files were copied to a single directory ignoring the directory structure in the supplied zip file. To execture the script using the directories, one could replace the files names with the full path name.
 
-It then loads the features data from a file and proceeds to remove all the entries that do not refer to a standard deviation or a mean. This is achieved by selecting only the columns that have '-std()' or '-mean()' as a substring. It also replaces all '-' with '.'.
+The script starts by loading the features data from a file and proceeds to remove all the entries that do not refer to a standard deviation or a mean. This is achieved by selecting only the columns that have '-std()' or '-mean()' as a substring. It also replaces all '-' with '.'.
 
 It creates a data frame called `selected.features` whose columns contain the index of the feature in the original feature name data, the original name and the updated name where '-' have been replaced with '.'. This data frame is later used to filter columns from the test and training data sets.
 
